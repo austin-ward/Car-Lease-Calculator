@@ -2,6 +2,7 @@ import sys
 import csv
 import os
 from datetime import datetime
+
 """
 Estimated Lease Payment Calculator Parameters
 
@@ -25,21 +26,38 @@ CSV File Columns: Time, Selling Price, Residual, Money Factor, Incentives, Term,
 
 """
 
-def calculate_lease_payment(selling_price, residual, money_factor, incentives, lease_term):
 
+def main():
+    """Menu for user in console."""
+    while True:
+        print("Car Lease Payment Calculator")
+        print("1) New lease payment")
+        print("2) Past lease payments")
+        print("3) Quit")
+        choice = input("Select an option (1-3): ").strip()
+
+        if choice == "1":
+            calculate_flow()
+        elif choice == "2":
+            display_records()
+        elif choice == "3":
+            print("Goodbye.")
+            break
+        else:
+            print("Invalid selection. Please choose 1, 2, or 3.\n")
+
+
+def calculate_lease_payment(selling_price, residual, money_factor, incentives, lease_term):
+    """
+    Calculate estimated monthly lease payment.
+    Parameters are expected as numeric types (floats except lease_term as int).
+    """
     base_cost = selling_price - residual
     interest = money_factor * (selling_price + residual)
     adjusted_cost = base_cost + interest - incentives
     monthly_payment = adjusted_cost / lease_term
-    return monthly_payment
+    return round(monthly_payment, 2)
 
 
-# Example Parameters
-selling_price = 40000
-residual = 18000
-money_factor = 0.00125
-incentives = 2000
-lease_term = 36
-
-monthly_payment = calculate_lease_payment(selling_price, residual, money_factor, incentives, lease_term)
-print(f"Estimated Monthly Lease Payment: ${monthly_payment:.2f}")
+if __name__ == "__main__":
+    main()
