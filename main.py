@@ -12,8 +12,7 @@ money_factor: The financing rate, expressed as a money factor.
 incentives: Any rebates or incentives that reduce the cost.
 lease_term: The duration of the lease in months.
 monthly_payment: The calculated payment of the car based on the parameters set. 
-"""
-"""
+
 Additions to program for CINF308 Midterm SUNY at Albany | Fall 2025
 1) Terminal input fields for each parameter
 2) Error handling for invalid inputs
