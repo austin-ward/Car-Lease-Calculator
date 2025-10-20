@@ -46,11 +46,8 @@ def main():
             print("Invalid selection. Please choose 1, 2, or 3.\n")
 
 
+# Parameter set up
 def calculate_lease_payment(selling_price, residual, money_factor, incentives, lease_term):
-    """
-    Calculate estimated monthly lease payment.
-    Parameters are expected as numeric types (floats except lease_term as int).
-    """
     base_cost = selling_price - residual
     interest = money_factor * (selling_price + residual)
     adjusted_cost = base_cost + interest - incentives
