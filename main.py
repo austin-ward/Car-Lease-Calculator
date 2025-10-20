@@ -1,5 +1,7 @@
 import sys
-
+import csv
+import os
+from datetime import datetime
 """
 Estimated Lease Payment Calculator Parameters
 
@@ -10,7 +12,18 @@ incentives: Any rebates or incentives that reduce the cost.
 lease_term: The duration of the lease in months.
 monthly_payment: The calculated payment of the car based on the parameters set. 
 """
+"""
+Additions to program for CINF308 Midterm SUNY at Albany | Fall 2025
+1) Terminal input fields for each parameter
+2) Error handling for invalid inputs
+3) Save each calculated payment to a CSV file for record keeping
+4) Simple retrieval of saved records
+5) Cleaner and more detailed output of figures
 
+CSV File: lease_records.csv
+CSV File Columns: Time, Selling Price, Residual, Money Factor, Incentives, Term, Monthly Payment
+
+"""
 
 def calculate_lease_payment(selling_price, residual, money_factor, incentives, lease_term):
 
